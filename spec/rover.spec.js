@@ -14,18 +14,17 @@ describe("Rover class", function() {
   });
 
   it("response returned by receiveMessage contains the name of the message",function(){
+   
   });
 
   it ("response returned by receiveMessage includes two results if two commands are sent in the message",function(){
   });
 
   it ("responds correctly to the status check command",function(){
-    // Creating a test message with a single status check command
+    // Created test message with a single status check command
     let commands = [new Command('STATUS_CHECK')];
     let message = new Message('Test for STATUS_CHECK command', commands);
-    // Creating a rover instance
-    let rover = new Rover(98382);
-    
+    let rover = new Rover(98382);// Creating a rover instance and passes rover position
     //status check command is completed and the status matches
     expect(rover.receiveMessage(message).results[0].completed).toEqual(true);
     expect(rover.receiveMessage(message).results[0].roverStatus).toEqual({
@@ -41,7 +40,7 @@ describe("Rover class", function() {
     let message = { name: 'Test for MODE_CHANGE command',commands };
     // Creating a rover instance
     let rover = new Rover('NORMAL'); // Initialize rover with a position
-     expect(rover.receiveMessage(message).results[0].completed).toEqual(true);   // Asserting the completion of the command
+    expect(rover.receiveMessage(message).results[0].completed).toEqual(true);   // Asserting the completion of the command
     expect(rover.position).toEqual('NORMAL');
 
     });

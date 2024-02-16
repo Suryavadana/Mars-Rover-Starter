@@ -9,8 +9,10 @@ describe("Message class", function() {
         expect( function() { new Message();}).toThrow(new Error('Name required.'));   
     });
     it("constructor sets name" ,function(){
+        expect(Message.name).toEqual(Message.name);
      });
     it("contains a commands array passed into the constructor as the 2nd argument", function(){
+        expect(Message.commands).toEqual(Message.commands);
     });
 
 });
