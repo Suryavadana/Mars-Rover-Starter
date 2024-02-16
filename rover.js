@@ -38,10 +38,10 @@ class Rover {
             else if(command.commandType === 'MODE_CHANGE'){
                this.mode = command.value;
                result = { completed: true  }
-               this.mode === 'LOW_POWER'
-               result = {completed:true}
-               this.position === 'NORMAL'
-               result = {completed : true}
+               // this.mode === 'LOW_POWER'
+               // result = {completed:true}
+               // this.position === 'NORMAL'
+               // result = {completed : true}
             }
 
             else if(command.commandType === 'MOVE')
