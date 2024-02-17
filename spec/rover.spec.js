@@ -14,7 +14,7 @@ describe("Rover class", function() {
   });
 
   it("response returned by receiveMessage contains the name of the message",function(){
-   
+  
   });
 
   it ("response returned by receiveMessage includes two results if two commands are sent in the message",function(){
@@ -49,7 +49,8 @@ describe("Rover class", function() {
    it ("responds with a false completed value when attempting to move in LOW_POWER mode" ,function(){
    // Creating a move command
     let commands = { commandType: 'MOVE' }; 
-    let message = { name: 'Test for MOVE command in "LOW_POWER"',command:commands}; // Creating a message with the move command
+    // Creating a message with the move command
+    let message = { name: 'Test for MOVE command in "LOW_POWER"',command:commands}; 
     // Creating a rover instance and setting its mode to LOW_POWER
     let rover = new Rover('NORMAL');
     rover.mode = 'LOW_POWER';
