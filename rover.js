@@ -1,24 +1,25 @@
 class Rover {
    // Write code here!
-    constructor(position,mode,generatorWatts)
+    constructor(position,mode='NORMAL',generatorWatts=110)
    {
       this.position=position;
       if(!position)
       {
          throw Error('Position required.');
       }
-      this. mode='NORMAL';
-      this.generatorWatts=110;
+      this. mode=mode;
+      this.generatorWatts=generatorWatts;
    }
 
-   receiveMessage(message)
+   receiveMessage(message,results)
    {  
       this.message=message;
+      this.results=results;
       // this condition will check if the message object exist and its command property is an array.
        if (!message || !Array.isArray(message.commands)) {
       return { message: message.name, results: [{ completed: false }] };
       }
-      let results = [];
+       results = [];
       try{
         for (let command of message.commands) 
          {
@@ -61,7 +62,6 @@ class Rover {
                result = {completed:true};
 
                }
-            
                 
             } 
            
